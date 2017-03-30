@@ -1,6 +1,7 @@
 # MouseOverImage
 Simple Magento2 extension to show `mouseover_image` in product list.
 
+![plp-image-mouseover-states](https://cloud.githubusercontent.com/assets/14164128/23297878/28a5370e-fa73-11e6-8692-da5fc6138a18.png)
 
 ## Installation
 
