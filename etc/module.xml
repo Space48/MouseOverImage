@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Space48_MouseOverImage
+ *
+ * @category    Space48
+ * @package     Space48_MouseOverImage
+ * @Date        03/2017
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      @diazwatson
+ */-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Space48_MouseOverImage" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Catalog"/>
+        </sequence>
+    </module>
+</config>

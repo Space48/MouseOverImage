@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Space48_MouseOverImage
+ *
+ * @category    Space48
+ * @package     Space48_MouseOverImage
+ * @Date        03/2017
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      @diazwatson
+ */-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Catalog\Block\Product\Image" type="Space48\MouseOverImage\Block\Catalog\Product\Image" />
+    <type name="Magento\Catalog\Block\Product\ImageBuilder">
+        <plugin name="Space48_MouseOverImage::AddProductToData" type="Space48\MouseOverImage\Plugin\Catalog\Product\ImageBuilder"/>
+    </type>
+</config>
