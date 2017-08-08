@@ -6,11 +6,21 @@
         "magento/framework": "100.0.*",
         "magento/module-catalog": "100.1.*"
     },
+    "require-dev": {
+    "magento/marketplace-eqp": "~1.0.5",
+    "phpunit/phpunit": "4.1.0"
+    },
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [
         "proprietary"
     ],
+      "repositories": {
+    "magento": {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  },
     "autoload": {
         "files": [
             "registration.php"
