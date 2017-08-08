@@ -1,5 +1,4 @@
 # MouseOverImage
-
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Space48/MouseOverImage/badges/quality-score.png?b=master&s=986facce0d5ea9e46ed1249d5d8857ae3d2d9cfb)](https://scrutinizer-ci.com/g/Space48/MouseOverImage/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/Space48/MouseOverImage/badges/build.png?b=master&s=c7e441ea1e92ab0502a6788e39caca51e7b46f6c)](https://scrutinizer-ci.com/g/Space48/MouseOverImage/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Space48/MouseOverImage/badges/coverage.png?b=master&s=fd6591d20cd1dfb98aed4fdbcce46986ef1e4bd4)](https://scrutinizer-ci.com/g/Space48/MouseOverImage/?branch=master)
