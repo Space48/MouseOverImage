@@ -12,18 +12,9 @@
           style="padding-bottom: <?php /* @escapeNotVerified */ echo ($block->getRatio() * 100); ?>%;">
         <img class="product-image-photo"
              <?php /* @escapeNotVerified */ echo $block->getCustomAttributes(); ?>
+             data-mage-init='{"mouseoverImage":{}}'
              src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
-             width="<?php /* @escapeNotVerified */ echo $block->getResizedImageWidth(); ?>"
-             height="<?php /* @escapeNotVerified */ echo $block->getResizedImageHeight(); ?>"
-             alt="<?php /* @escapeNotVerified */ echo $block->stripTags($block->getLabel(), null, true); ?>"/></span>
-</span>
-<span class="product-image-container"
-      style="width:<?php /* @escapeNotVerified */ echo $block->getWidth()?>px;">
-    <span class="product-image-wrapper"
-          style="padding-bottom: <?php /* @escapeNotVerified */ echo ($block->getRatio() * 100); ?>%;">
-        <img class="product-image-mouseover"
-             <?php /* @escapeNotVerified */ echo $block->getCustomAttributes(); ?>
-             src="<?php /* @escapeNotVerified */ echo $block->getMouseOverImageUrl(); ?>"
+             data-alt-src="<?php /* @escapeNotVerified */ echo $block->getMouseOverImageUrl(); ?>"
              width="<?php /* @escapeNotVerified */ echo $block->getResizedImageWidth(); ?>"
              height="<?php /* @escapeNotVerified */ echo $block->getResizedImageHeight(); ?>"
              alt="<?php /* @escapeNotVerified */ echo $block->stripTags($block->getLabel(), null, true); ?>"/></span>
