@@ -14,7 +14,7 @@
              <?php /* @escapeNotVerified */ echo $block->getCustomAttributes(); ?>
              data-mage-init='{"mouseoverImage":{}}'
              src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
-             data-alt-src="<?php /* @escapeNotVerified */ echo $block->getMouseOverImageUrl(); ?>"
+             data-alt-src="<?php /* @escapeNotVerified */ echo $block->getData(\Space48\MouseOverImage\Plugin\Catalog\Product\ImageBuilder::IMAGE_URL); ?>"
              width="<?php /* @escapeNotVerified */ echo $block->getResizedImageWidth(); ?>"
              height="<?php /* @escapeNotVerified */ echo $block->getResizedImageHeight(); ?>"
              alt="<?php /* @escapeNotVerified */ echo $block->stripTags($block->getLabel(), null, true); ?>"/></span>

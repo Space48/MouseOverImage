@@ -16,61 +16,61 @@ namespace Space48\MouseOverImage\Plugin\Catalog\Product;
 use Closure;
 use Magento\Catalog\Block\Product\ImageBuilder as CoreImageBuilder;
 use Magento\Catalog\Helper\Image;
-use Magento\Catalog\Helper\ImageFactory;
 use Magento\Catalog\Model\Product;
 use Magento\Framework\Registry;
 
 class ImageBuilder
 {
+    const CURRENT_PRODUCT_KEY = 'mouseover_current_product';
+    const IMAGE_URL           = 'mouseover_image_url';
+    const IMAGE_SIZE_ID       = 'category_page_grid';
+
+    /**
+     * @var Registry
+     */
+    protected $registry;
 
     /**
      * @var Image
      */
     private $imageHelper;
-    /**
-     * @var ImageFactory
-     */
-    private $imageFactory;
 
     public function __construct(
         Registry $registry,
-        Image $imageHelper,
-        ImageFactory $imageFactory
+        Image $imageHelper
     )
     {
         $this->registry = $registry;
         $this->imageHelper = $imageHelper;
-        $this->imageFactory = $imageFactory;
     }
 
     /**
      * @param CoreImageBuilder $subject
-     * @param                  $result
+     * @param \Magento\Catalog\Block\Product\Image $result
      *
      * @return mixed
      */
     public function afterCreate(CoreImageBuilder $subject, $result)
     {
-        $product = $this->registry->registry('mouseoverimage_current_product');
-        $mouseOverImage = $product->getData('mouseover_image');
-        $result->setData('mouse_over_image_url', $this->getMouseOverImageUrl($product, $mouseOverImage));
-        // TODO Find the way to rewrite core template from here
-//        $result->setTemplate($this->getTemplate($product));
+        $product = $this->registry->registry(self::CURRENT_PRODUCT_KEY);
+
+        $result->setData(self::IMAGE_URL, $this->getMouseOverImageUrl($product));
+        $result->setTemplate($this->getTemplate($result->getTemplate()));
 
         return $result;
     }
 
     /**
      * @param $product
-     * @param $mouseOverImage
      *
      * @return string
      */
-    private function getMouseOverImageUrl($product, $mouseOverImage): string
+    private function getMouseOverImageUrl($product)
     {
         $mouseOverImageUrl = '';
-        if ($mouseOverImage){
-            $mouseOverImageUrl = $this->imageHelper->init($product, 'product_page_image_large')
+
+        if ($mouseOverImage = $product->getData('mouseover_image')) {
+            $mouseOverImageUrl = $this->imageHelper->init($product, self::IMAGE_SIZE_ID)
                 ->setImageFile($mouseOverImage)
                 ->getUrl();
         }
@@ -80,27 +80,24 @@ class ImageBuilder
 
     /**
      * @param CoreImageBuilder $subject
-     * @param Closure          $proceed
-     * @param Product          $product
+     * @param Closure $proceed
+     * @param Product $product
      *
      * @return CoreImageBuilder
+     * @throws \RuntimeException
      */
     public function aroundSetProduct(CoreImageBuilder $subject, Closure $proceed, Product $product)
     {
         $result = $proceed($product);
-        $this->registry->unregister('mouseoverimage_current_product');
-        $this->registry->register('mouseoverimage_current_product', $product);
+
+        $this->registry->unregister(self::CURRENT_PRODUCT_KEY);
+        $this->registry->register(self::CURRENT_PRODUCT_KEY, $product);
 
         return $result;
     }
 
-    private function getTemplate($product)
+    private function getTemplate($currentTemplate)
     {
-        $helper = $this->imageFactory->create()
-            ->init($product, 'category_page_grid');
-
-        return $helper->getFrame()
-            ? 'Space48_MouseOverImage::product/image.phtml'
-            : 'Space48_MouseOverImage::product/image_with_borders.phtml';
+        return str_replace('Magento_Catalog::', 'Space48_MouseOverImage::', $currentTemplate);
     }
 }
