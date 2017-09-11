@@ -21,7 +21,7 @@ From the terminal execute the following:
 
 then
 
-`composer require "space48/mouseoverimage:dev-master"`
+`composer require "space48/mouseoverimage:{release-version}"`
 
 **Using Modman:**
 
