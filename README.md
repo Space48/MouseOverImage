@@ -34,6 +34,7 @@ From the terminal execute the following:
 Once installed...
 
 1. Execute the indexer `bin/magento indexer:reindex`
-2. Go to the `Admin Penel -> Products -> Catalog` and edit a product.
-3. Under `Images and Videos` section, select an image and assign the Role `Mouse Over`
+2. Go to the `Admin Panel -> Products -> Catalog` and edit a product.
+3. Under `Images and Videos` section, select the image you want to use as mouseover image and assign the Role `Mouse Over`
+![wh6tahuzin](https://user-images.githubusercontent.com/1080386/30275755-483ac376-96fa-11e7-939e-63426fab50b3.gif)
 4. Save changes.
