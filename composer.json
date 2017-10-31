@@ -3,7 +3,7 @@
     "description": "Simple Magento2 extension to show mouseover_image in product list",
     "require": {
         "php": "~7.0.0",
-        "magento/framework": "100.0.*|100.1.*"
+        "magento/framework": "^100.1.0| ^101.0.0"
     },
     "require-dev": {
     "magento/marketplace-eqp": "~1.0.5",
