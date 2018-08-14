@@ -4,10 +4,11 @@ define(['jquery'], function($) {
         var $el = $(element);
         var $img = $el.find('img[data-alt-src]');
         var altSrc = $img.data('alt-src');
+        var origSrc = $img.prop('src');
 
         if (altSrc !== '') {
             $el.on('mouseenter', function () {
-                var origSrc = $img.prop('src');
+                origSrc = $img.prop('src');
 
                 $img.prop({
                     src: altSrc
