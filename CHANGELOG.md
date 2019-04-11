@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2019-04-11
+
+### Changed
+
+- Added support for Magento 2.3
+- **BREAKING** Magento versions <2.3 are no longer supported due to changes in how Magento instantiates product image blocks
+
 ## [1.0.6] - 2018-09-19
 
 ### Changed
