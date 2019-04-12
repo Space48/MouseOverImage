@@ -2,15 +2,15 @@
     "name": "space48/mouseoverimage",
     "description": "Simple Magento2 extension to show mouseover_image in product list",
     "require": {
-        "php": "~7.0 || 7.1",
-        "magento/framework": "^100.1.0| ^101.0.0"
+        "php": ">=7.0 <=7.3",
+        "magento/module-catalog": "^103.0.0"
     },
     "require-dev": {
     "magento/marketplace-eqp": "~1.0.5",
     "phpunit/phpunit": "4.1.0"
     },
     "type": "magento2-module",
-    "version": "1.0.6",
+    "version": "2.0.0",
     "license": [
         "proprietary"
     ],

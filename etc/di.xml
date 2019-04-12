@@ -10,7 +10,7 @@
  * @author      @diazwatson
  */-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Catalog\Block\Product\ImageBuilder">
-        <plugin name="Space48_MouseOverImage::AddProductToData" type="Space48\MouseOverImage\Plugin\Catalog\Product\ImageBuilder"/>
+    <type name="Magento\Catalog\Block\Product\ImageFactory">
+        <plugin name="Space48_MouseOverImage::AddMouseOverImage" type="Space48\MouseOverImage\Plugin\Catalog\Product\ImageFactoryPlugin"/>
     </type>
 </config>

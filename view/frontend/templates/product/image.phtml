@@ -1,16 +1,16 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 ?>
 <?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
 
 <img class="photo image"
-     <?php /* @escapeNotVerified */ echo $block->getCustomAttributes(); ?>
-     data-mage-init='{"mouseoverImage":{}}'
-     src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
-     data-alt-src="<?php /* @escapeNotVerified */ echo $block->getData(\Space48\MouseOverImage\Plugin\Catalog\Product\ImageBuilder::IMAGE_URL); ?>"
-     width="<?php /* @escapeNotVerified */ echo $block->getWidth(); ?>"
-     height="<?php /* @escapeNotVerified */ echo $block->getHeight(); ?>"
-     alt="<?php /* @escapeNotVerified */ echo $block->stripTags($block->getLabel(), null, true); ?>" />
+    <?= /* @escapeNotVerified */ $block->getCustomAttributes() ?>
+    data-mage-init='{"mouseoverImage":{}}'
+    src="<?= /* @escapeNotVerified */ $block->getImageUrl() ?>"
+    data-alt-src="<?= $block->getData(\Space48\MouseOverImage\Plugin\Catalog\Product\ImageFactoryPlugin::IMAGE_BLOCK_URL_KEY) ?>"
+    width="<?= /* @escapeNotVerified */ $block->getWidth() ?>"
+    height="<?= /* @escapeNotVerified */ $block->getHeight() ?>"
+    alt="<?= /* @escapeNotVerified */ $block->stripTags($block->getLabel(), null, true) ?>" />
