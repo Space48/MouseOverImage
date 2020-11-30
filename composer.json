@@ -6,7 +6,7 @@
         "magento/module-catalog": "^103.0.0|^104.0.0"
     },
     "type": "magento2-module",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "license": [
         "proprietary"
     ],
