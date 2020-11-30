@@ -32,6 +32,12 @@ class ImageFactoryPlugin
         $result->setData(self::IMAGE_BLOCK_URL_KEY, $this->getMouseOverImageUrl($product));
         $result->setTemplate($this->transformTemplate($result->getTemplate()));
 
+        $customAttributes = $result->getData('custom_attributes');
+
+        if (is_array($customAttributes)) {
+            $result->setData('custom_attributes', $this->getStringCustomAttributes($customAttributes));
+        }
+
         return $result;
     }
 
@@ -60,5 +66,22 @@ class ImageFactoryPlugin
     private function transformTemplate($currentTemplate): string
     {
         return str_replace('Magento_Catalog::', 'Space48_MouseOverImage::', $currentTemplate);
+    }
+
+    /**
+     * Retrieve image custom attributes for HTML element
+     *
+     * @param array $attributes
+     * @return string
+     */
+    private function getStringCustomAttributes(array $attributes): string
+    {
+        $result = [];
+        foreach ($attributes as $name => $value) {
+            if ($name != 'class') {
+                $result[] = $name . '="' . $value . '"';
+            }
+        }
+        return !empty($result) ? implode(' ', $result) : '';
     }
 }
